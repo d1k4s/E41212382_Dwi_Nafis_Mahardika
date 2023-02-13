@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\ProvisionServer;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return 'ngak ngik ngok gomenasai 🐷🐷🐷🐷';
 });
+Route::get('/user', [UserController::class, "index"]);
+Route::get('/server', [ProvisionServer::class, "__invoke"]);
+Route::get('/photo', [PhotoController::class, "create"]);
